@@ -12,3 +12,5 @@ INSERT INTO tb_user_role (user_id, role_id) VALUES (2, 2);
 INSERT INTO tb_user_role (user_id, role_id) VALUES (3, 1);
 INSERT INTO tb_user_role (user_id, role_id) VALUES (3, 2);
 INSERT INTO tb_user_role (user_id, role_id) VALUES (3, 3);
+
+INSERT INTO tb_course (name, img_Uri, img_Gray_Uri) VALUES ('Curso HTML 5', 'https://arquivo.devmedia.com.br/cursos/imagem/curso_o-que-e-html_1966.jpg', 'https://codegate01.com/wp-content/uploads/2020/05/curso-html.jpg')
