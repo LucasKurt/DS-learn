@@ -25,3 +25,6 @@ INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) 
 INSERT INTO tb_section (title, description, position, img_Uri, resource_id, prerequisite_id) Values ('Capítulo 1', 'Neste capítulo vamos começar', 1, 'https://arquivo.devmedia.com.br/cursos/imagem/curso_o-que-e-html_1966.jpg', 1, null);
 INSERT INTO tb_section (title, description, position, img_Uri, resource_id, prerequisite_id) Values ('Capítulo 2', 'Neste capítulo vamos continuar', 2, 'https://arquivo.devmedia.com.br/cursos/imagem/curso_o-que-e-html_1966.jpg', 1, 1);
 INSERT INTO tb_section (title, description, position, img_Uri, resource_id, prerequisite_id) Values ('Capítulo 2', 'Neste capítulo vamos finalizar', 3, 'https://arquivo.devmedia.com.br/cursos/imagem/curso_o-que-e-html_1966.jpg', 1, 2);
+
+INSERT INTO tb_enrollment (user_id, offer_id, enroll_Moment, refund_moment, available, only_Update) Values (1, 1, now(), null, true, false);
+INSERT INTO tb_enrollment (user_id, offer_id, enroll_Moment, refund_moment, available, only_Update) Values (2, 1, now(), null, true, false);
