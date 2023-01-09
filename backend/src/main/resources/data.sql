@@ -26,8 +26,8 @@ INSERT INTO tb_section (title, description, position, img_Uri, resource_id, prer
 INSERT INTO tb_section (title, description, position, img_Uri, resource_id, prerequisite_id) VALUES ('Capítulo 2', 'Neste capítulo vamos continuar', 2, 'https://arquivo.devmedia.com.br/cursos/imagem/curso_o-que-e-html_1966.jpg', 1, 1);
 INSERT INTO tb_section (title, description, position, img_Uri, resource_id, prerequisite_id) VALUES ('Capítulo 3', 'Neste capítulo vamos finalizar', 3, 'https://arquivo.devmedia.com.br/cursos/imagem/curso_o-que-e-html_1966.jpg', 1, 2);
 
-INSERT INTO tb_enrollment (user_id, offer_id, enroll_Moment, refund_moment, available, only_Update) VALUES (1, 1, now(), null, true, false);
-INSERT INTO tb_enrollment (user_id, offer_id, enroll_Moment, refund_moment, available, only_Update) VALUES (2, 1, now(), null, true, false);
+INSERT INTO tb_enrollment (user_id, offer_id, enroll_Moment, refund_moment, available, only_Update) VALUES (1, 1, TIMESTAMP WITH TIME ZONE '2020-11-20T13:00:00Z', null, true, false);
+INSERT INTO tb_enrollment (user_id, offer_id, enroll_Moment, refund_moment, available, only_Update) VALUES (2, 1, TIMESTAMP WITH TIME ZONE '2020-11-20T13:00:00Z', null, true, false);
 
 INSERT INTO tb_lesson (title, position, section_id) VALUES ('Aula 1 do cap 1', 1, 1);
 INSERT INTO tb_content (id, text_Content, video_Uri) VALUES (1, 'video da aula 1', 'https://youtu.be/D4frmIHAxEY');
@@ -39,8 +39,12 @@ INSERT INTO tb_lesson (title, position, section_id) VALUES ('Aula 3 do cap 1', 3
 INSERT INTO tb_content (id, text_Content, video_Uri) VALUES (3, 'video da aula 3', 'https://youtu.be/D4frmIHAxEY');
 
 INSERT INTO tb_lesson (title, position, section_id) VALUES ('tarefa do cap 1', 4, 1);
-INSERT INTO tb_task (id, description, question_Count, approval_Count, weight, due_Date) VALUES (4, 'fazer o trabalho bem feito', 5, 4, 1.0, now());
+INSERT INTO tb_task (id, description, question_Count, approval_Count, weight, due_Date) VALUES (4, 'fazer o trabalho bem feito', 5, 4, 1.0, TIMESTAMP WITH TIME ZONE '2020-11-25T13:00:00Z');
 
 INSERT INTO tb_lessons_done (lesson_id, user_id, offer_id) VALUES (1, 1, 1);
 INSERT INTO tb_lessons_done (lesson_id, user_id, offer_id) VALUES (2, 1, 1);
 INSERT INTO tb_lessons_done (lesson_id, user_id, offer_id) VALUES (1, 2, 1);
+
+INSERT INTO tb_notification (text, moment, read, route, user_id) VALUES ('Primeiro feedback de tarefa: favor revisar', TIMESTAMP WITH TIME ZONE '2020-12-10T13:00:00Z', true, '/offers/1/resource/1/sections/1', 1);
+INSERT INTO tb_notification (text, moment, read, route, user_id) VALUES ('Segundo feedback: favor revisar', TIMESTAMP WITH TIME ZONE '2020-12-12T13:00:00Z', true, '/offers/1/resource/1/sections/1', 1);
+INSERT INTO tb_notification (text, moment, read, route, user_id) VALUES ('Terceiro feedback: favor revisar', TIMESTAMP WITH TIME ZONE '2020-12-14T13:00:00Z', true, '/offers/1/resource/1/sections/1', 1);
