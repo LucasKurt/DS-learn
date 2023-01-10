@@ -1,5 +1,6 @@
 package com.devsuperior.dslearnbds.entities;
 
+import java.io.Serializable;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -21,7 +22,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_topic")
-public class Topic {
+public class Topic  implements Serializable {
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
