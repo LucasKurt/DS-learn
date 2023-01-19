@@ -56,22 +56,12 @@ public class ResourceExceptionHandler {
 	}
 	
 	@ExceptionHandler(UnauthorizedUserException.class)
-	public ResponseEntity<StandardError> unauthorizedUserException(UnauthorizedUserException err, HttpServletRequest request) {
-		Instant timestamp = Instant.now();
-		Integer status = HttpStatus.UNAUTHORIZED.value();
-		String error = err.getMessage();
-		String path = request.getRequestURI();
-		
-		return ResponseEntity.status(status).body(new StandardError(timestamp, status, error, path));
+	public ResponseEntity<OAuthCustomError> unauthorizedUserException(UnauthorizedUserException err, HttpServletRequest request) {		
+		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(new OAuthCustomError("Unauthorized", err.getMessage()));
 	}
 	
 	@ExceptionHandler(ForbiddenUserException.class)
-	public ResponseEntity<StandardError> forbiddenUserException(ForbiddenUserException err, HttpServletRequest request) {
-		Instant timestamp = Instant.now();
-		Integer status = HttpStatus.FORBIDDEN.value();
-		String error = err.getMessage();
-		String path = request.getRequestURI();
-		
-		return ResponseEntity.status(status).body(new StandardError(timestamp, status, error, path));
+	public ResponseEntity<OAuthCustomError> forbiddenUserException(ForbiddenUserException err, HttpServletRequest request) {
+		return ResponseEntity.status(HttpStatus.FORBIDDEN).body(new OAuthCustomError("Forbidden", err.getMessage()));
 	}
 }
